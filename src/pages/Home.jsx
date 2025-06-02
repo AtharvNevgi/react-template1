@@ -1,9 +1,11 @@
-import Navbar from './Navbar.jsx';
-import '../styles/home.css'
+import Navbar from "./Navbar.jsx";
+import "../styles/home.css";
 
 function Home() {
-    return (<>
-        <Navbar />
-    </>);
+  return (
+    <>
+      <Navbar />
+    </>
+  );
 }
-export default Home
+export default Home;
