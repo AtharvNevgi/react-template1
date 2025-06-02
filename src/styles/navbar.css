@@ -1,17 +1,34 @@
 .navbar {
     width: 100%;
     height: 110px;
-    background-color: red;
+    /* background-color: red; */
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
 }
+
 .nav-left {
     width: 25%;
     height: 110px;
-    background-color: yellow;
+    /* background-color: yellow; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 .nav-right {
     width: 40%;
     height: 110px;
     background-color: blue;
+}
+
+.logo {
+    width: 30px;
+    height: 30px;
+    border-radius: 1.2rem;
+    margin-right: 10px;
+}
+
+h1 {
+    color: white;
+    font-family: Arial, sans-serif;
 }
