@@ -5,7 +5,7 @@
 
 .container {
     background-color: black;
-    height: 100vh;
+    height: 110vh;
 }
 
 .main {
@@ -19,20 +19,22 @@
 
 .main-left {
     width: 53%;
-    height: 75vh;
+    height: 38vh;
     /* background-color: yellow; */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 .main-right {
     width: 40%;
     height: 75vh;
-    background-color: blue;
+    /* background-color: blue; */
 }
-
 .heading {
     font-size: 70px;
-}
 
+}
 h3 {
-    font-size: 25px;
+    font-size: 25px;    
 }

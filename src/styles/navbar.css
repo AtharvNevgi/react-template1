@@ -4,6 +4,7 @@
     /* background-color: red; */
     display: flex;
     justify-content: space-between;
+    /* position: fixed; */
 }
 
 .nav-left {
