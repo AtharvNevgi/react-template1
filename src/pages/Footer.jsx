@@ -1,4 +1,12 @@
 import '../styles/footer.css';
+import visa from '../assets/images/Visa.png';
+import payPal from '../assets/images/PayPal.png';
+import brandAmex from '../assets/images/brand-amex_3x.png';
+import brandChinaunionPay from '../assets/images/brand-chinaunionpay_3x.png';
+import brandJcb from '../assets/images/brand-jcb_3x.png';
+import brandMasterCard from '../assets/images/brand-mastercard_3x.png';
+import diners from '../assets/images/Diners.png';
+import discover from '../assets/images/Discover.png';
 
 function Footer() {
     return (<>
@@ -20,8 +28,19 @@ function Footer() {
                     </div>
                 </div>
                 <div className="bottom">
-                    <div className="bottom-left"></div>
-                    <div className="bottom-right"></div>
+                    <div className="bottom-left">
+                        <h4>&copy; 2025 by Atharva Nevgi</h4>
+                    </div>
+                    <div className="bottom-right">
+                            <img src={visa} alt="" />
+                            <img src={brandMasterCard} alt="" />
+                            <img src={brandChinaunionPay} alt="" />
+                            <img src={brandJcb} alt="" />
+                            <img src={brandAmex} alt="" />
+                            <img src={discover} alt="" />
+                            <img src={diners} alt="" />
+                            <img src={payPal} alt="" />
+                    </div>
                 </div>
             </div>
         </footer>

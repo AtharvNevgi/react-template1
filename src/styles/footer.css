@@ -15,7 +15,7 @@ footer {
   width: 100%;
   height: 9vh;
   display: flex;
-  background-color: red;
+  /* background-color: red; */
 }
 .top-left {
   width: 45%;
@@ -51,16 +51,24 @@ h4 {
 .bottom {
   width: 100%;
   height: 11vh;
-  background-color: purple;
+  /* background-color: purple; */
   display: flex;
 }
 .bottom-left {
   width: 50%;
   height: 11vh;
-  background-color: gray;
+  /* background-color: gray; */
+  display: flex;
+  align-items: center;
+}
+.bottom-left h4 {
+  margin-left: 22px;
 }
 .bottom-right {
   width: 50%;
   height: 11vh;
-  background-color: yellow;
+  /* background-color: yellow; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
