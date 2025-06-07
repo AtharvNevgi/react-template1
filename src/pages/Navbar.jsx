@@ -13,11 +13,11 @@ function Navbar() {
                 </a>
             </div>
             <div className="nav-right">
-                <NavLink to="/"><i className="bi bi-person-circle"></i></NavLink>
                 <NavLink to="/"><h3>FAQ</h3></NavLink>
+                <NavLink to="/"><i className="bi bi-person-circle"></i></NavLink>
                 <NavLink to="/"><h3 className='login'>Log In</h3></NavLink>
                 <NavLink to="/"><i className="bi bi-bag-fill"></i></NavLink>
-                <NavLink to="/"><button className='buyNow'>Buy Now</button></NavLink>
+                <NavLink to="/tracmateShop"><button className='buyNow'>Buy Now</button></NavLink>
             </div>
         </div>
     );
