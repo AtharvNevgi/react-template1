@@ -94,22 +94,90 @@
     border-radius: 50%;
     border: 1px solid white;
 }
-.white {
+.White {
     background-color: white;
 }
-.black {
+.Black {
     background-color: black;
 }
-.blue {
+.Blue {
     background-color: blue;
 }
-.purple {
+.Purple {
     background-color: purple;
 }
-.torquoise {
+.Torquoise {
     background-color: rgb(42, 202, 202);
 }
 .palette:hover {
     border: 2px solid white;
     cursor: pointer;
+}
+.paletteSelect {
+    border: 2px solid white;
+}
+.quantityCounter {
+    width: 90px;
+    height: 35px;
+    background-color: black;
+    margin-top: 10px;
+    display: flex;
+}
+.quantityCounter input {
+    width: 33.33px;
+    text-align: center;
+    border: none;
+    outline: none;
+}
+.quantityCounter button {
+    width: 33.33px;
+    border: none;
+    background-color: white;
+}
+.bi-plus {
+    color: rgb(82, 79, 79);
+    font-size: 25px;
+}
+.bi-plus:hover {
+    cursor: pointer;
+}
+.fade {
+    color: rgba(82, 79, 79, 0.281);
+    font-size: 25px;
+}
+.nofade {
+    color: rgb(82, 79, 79);
+    font-size: 25px;
+    cursor: pointer;
+}
+.addCart {
+    width: 100%;
+    height: 38px;
+    border-radius: 2rem;
+    border: none;
+    background-color: rgb(159, 77, 235);
+    color: white;
+    font-size: 15px;
+}
+.addCart:hover {
+    text-decoration-line: underline;
+    cursor: pointer;
+}
+.productInfo1 {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.productInfo1 h4 {
+    font-size: 20px;
+}
+.productInfo1 button {
+    background: none;
+    border: none;
+}
+.productInfo1 button i {
+    color: white;
+}
+.productInfo2 p{
+    visibility: hidden;
 }

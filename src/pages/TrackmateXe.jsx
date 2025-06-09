@@ -19,9 +19,24 @@ function TrackmateXe() {
     const [img, setImg] = useState(0);
     let currImg = watchImg[img];
 
-    let watchAmount = 85;
-    let selectColor = 'White';
+    const color =['White', 'Black', 'Blue', 'Purple', 'Torquoise'];
+    const [color1, setColor] = useState(0);
 
+    let watchAmount = 85;
+    let selectColor = color[color1];
+
+    const [count, setCount] = useState(1);
+    const increment = () => {
+        setCount(count + 1);
+    }
+    const decrement = () => {
+        if(count <= 1){
+            setCount(count);
+        }
+        else {
+            setCount(count -1);
+        }
+    }
     return (
         <div className='container trackMate'>
             <div className="content">
@@ -55,14 +70,27 @@ function TrackmateXe() {
                     <h4>0.4 TrackMate XE</h4>
                     <p>SKU: 0001</p><br/>
                     <p><b>${watchAmount}.00</b></p><br/>
-                    <p>Color: {selectColor}*</p>
+                    <p>Color: {selectColor} *</p>
                     <div className="colorPalette">
-                        <div className="palette white"></div>
-                        <div className="palette black"></div>
-                        <div className="palette blue"></div>
-                        <div className="palette purple"></div>
-                        <div className="palette torquoise"></div>
+                        {
+                            color.map((item, index)=>{
+                                return(
+                                    <>
+                                        <div onClick={()=> setColor(index)} className={`palette ${item} ${color1 == index ? 'paletteSelect': 'paletteSelect1'}`} key={index}></div>
+                                    </>
+                                )
+                            })
+                        }
                     </div>
+                    <p>Quantity *</p>
+                    <div className="quantityCounter">
+                        <button onClick={decrement} className='decrement'><i class={`bi bi-dash ${count <= 1 ? 'fade' : 'nofade'}`}></i></button>
+                        <input type="text" onChange={(e)=> setCount(e.target.value)} value={count}/>
+                        <button onClick={increment} className='increment'><i class="bi bi-plus"></i></button>
+                    </div>
+                    <br/><br/>
+                    <button className='addCart'>Add to Cart</button>
+                     
                 </div>
             </div>
         </div>
