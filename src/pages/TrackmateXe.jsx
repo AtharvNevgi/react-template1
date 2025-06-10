@@ -37,6 +37,11 @@ function TrackmateXe() {
             setCount(count -1);
         }
     }
+    const [openAccordion, setOpenAccordion] = useState(-1);
+
+    const handleAccordionClick = (index) => {
+        setOpenAccordion(openAccordion === index ? -1 : index);
+    };
     return (
         <div className='container trackMate'>
             <div className="content">
@@ -89,8 +94,33 @@ function TrackmateXe() {
                         <button onClick={increment} className='increment'><i class="bi bi-plus"></i></button>
                     </div>
                     <br/><br/>
-                    <button className='addCart'>Add to Cart</button>
-                     
+                    <button className="addCart">Add to Cart</button>
+                    <div className='trackMate-accordion'>
+
+                        <button className="accordion" onClick={() => handleAccordionClick(0)}>Product Info <i class={`bi ${openAccordion === 0 ? 'bi-dash' : 'bi-plus'}`}></i></button>
+                        <div className="panel" style={{ display: openAccordion === 0 ? 'block' : 'none' }}>
+                            <p>
+                                I'm a product detail. I'm a great place to add more information about your product such as sizing, material, care and cleaning instructions.
+                                This is also a great space to write what makes this product special and how your customers can benefit from this item.
+                            </p>
+                        </div>
+
+                        <button className="accordion" onClick={() => handleAccordionClick(1)}>Return & Refund Policy <i class={`bi ${openAccordion === 1 ? 'bi-dash' : 'bi-plus'}`}></i></button>
+                        <div className="panel" style={{ display: openAccordion === 1 ? 'block' : 'none' }}>
+                            <p>
+                                I’m a Return and Refund policy. I’m a great place to let your customers know what to do in case they are dissatisfied with their purchase. 
+                                Having a straightforward refund or exchange policy is a great way to build trust and reassure your customers that they can buy with confidence.
+                            </p>
+                        </div>
+
+                        <button className="accordion" onClick={() => handleAccordionClick(2)}>Shipping Info <i class={`bi ${openAccordion === 2 ? 'bi-dash' : 'bi-plus'}`}></i></button>
+                        <div className="panel" style={{ display: openAccordion === 2 ? 'block' : 'none' }}>
+                            <p>
+                                I'm a shipping policy. I'm a great place to add more information about your shipping methods, packaging and cost. 
+                                Providing straightforward information about your shipping policy is a great way to build trust and reassure your customers that they can buy from you with confidence.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
