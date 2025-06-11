@@ -220,3 +220,17 @@
 .accordion i:hover {
     color: #ccc;
 }
+.socials {
+    width: 50%;
+    height: 40px;
+    margin-top: 50px;
+}
+.socials i {
+    font-size: 16px;
+    margin-left: 17px;
+    text-align: center;
+}
+.socials i:hover {
+    cursor: pointer;
+    color: #ccc;
+}

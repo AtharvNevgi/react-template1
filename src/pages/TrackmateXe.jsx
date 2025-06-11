@@ -120,6 +120,12 @@ function TrackmateXe() {
                                 Providing straightforward information about your shipping policy is a great way to build trust and reassure your customers that they can buy from you with confidence.
                             </p>
                         </div>
+                        <div className="socials">
+                            <i class="bi bi-facebook"></i>
+                            <i class="bi bi-pinterest"></i>
+                            <i class="bi bi-whatsapp"></i>
+                            <i class="bi bi-twitter-x"></i>
+                        </div>
                     </div>
                 </div>
             </div>
