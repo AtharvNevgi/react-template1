@@ -15,11 +15,11 @@ import { useState } from 'react';
 function TrackmateXe() {
     const smallWatchImg = [smallWatchWhite, smallWatchBlack, smallWatchBlue, smallWatchPurple, smallWatchCyan];
     const watchImg = [watchWhite, watchBlack, watchBlue, watchPurple, watchCyan];
-    
+
     const [img, setImg] = useState(0);
     let currImg = watchImg[img];
 
-    const color =['White', 'Black', 'Blue', 'Purple', 'Torquoise'];
+    const color = ['White', 'Black', 'Blue', 'Purple', 'Torquoise'];
     const [color1, setColor] = useState(0);
 
     let watchAmount = 85;
@@ -30,11 +30,11 @@ function TrackmateXe() {
         setCount(count + 1);
     }
     const decrement = () => {
-        if(count <= 1){
+        if (count <= 1) {
             setCount(count);
         }
         else {
-            setCount(count -1);
+            setCount(count - 1);
         }
     }
     const [openAccordion, setOpenAccordion] = useState(-1);
@@ -55,7 +55,7 @@ function TrackmateXe() {
                                 smallWatchImg.map((item, index) => {
                                     return (<>
                                         <div className={`watchInner ${img === index ? "watchBorder" : "watch"}`} key={index}>
-                                            <button onClick={()=>  setImg(index)}><img src={item} alt=""/></button>
+                                            <button onClick={() => setImg(index)}><img src={item} alt="" /></button>
                                         </div>
                                     </>
                                     );
@@ -65,23 +65,23 @@ function TrackmateXe() {
                     </div>
                     <div className="watchInfo">
                         <p>
-                           I'm a product description.
-                           I'm a great place to add more details about your product such as sizing, material, 
-                           care instructions and cleaning instructions.
+                            I'm a product description.
+                            I'm a great place to add more details about your product such as sizing, material,
+                            care instructions and cleaning instructions.
                         </p>
                     </div>
                 </div>
                 <div className="content-right">
                     <h4>0.4 TrackMate XE</h4>
-                    <p>SKU: 0001</p><br/>
-                    <p><b>${watchAmount}.00</b></p><br/>
+                    <p>SKU: 0001</p><br />
+                    <p><b>${watchAmount}.00</b></p><br />
                     <p>Color: {selectColor} *</p>
                     <div className="colorPalette">
                         {
-                            color.map((item, index)=>{
-                                return(
+                            color.map((item, index) => {
+                                return (
                                     <>
-                                        <div onClick={()=> setColor(index)} className={`palette ${item} ${color1 == index ? 'paletteSelect': 'paletteSelect1'}`} key={index}></div>
+                                        <div onClick={() => setColor(index)} className={`palette ${item} ${color1 == index ? 'paletteSelect' : 'paletteSelect1'}`} key={index}></div>
                                     </>
                                 )
                             })
@@ -90,10 +90,10 @@ function TrackmateXe() {
                     <p>Quantity *</p>
                     <div className="quantityCounter">
                         <button onClick={decrement} className='decrement'><i class={`bi bi-dash ${count <= 1 ? 'fade' : 'nofade'}`}></i></button>
-                        <input type="text" onChange={(e)=> setCount(e.target.value)} value={count}/>
+                        <input type="text" onChange={(e) => setCount(e.target.value)} value={count} />
                         <button onClick={increment} className='increment'><i class="bi bi-plus"></i></button>
                     </div>
-                    <br/><br/>
+                    <br /><br />
                     <button className="addCart">Add to Cart</button>
                     <div className='trackMate-accordion'>
 
@@ -108,7 +108,7 @@ function TrackmateXe() {
                         <button className="accordion" onClick={() => handleAccordionClick(1)}>Return & Refund Policy <i class={`bi ${openAccordion === 1 ? 'bi-dash' : 'bi-plus'}`}></i></button>
                         <div className="panel" style={{ display: openAccordion === 1 ? 'block' : 'none' }}>
                             <p>
-                                I’m a Return and Refund policy. I’m a great place to let your customers know what to do in case they are dissatisfied with their purchase. 
+                                I’m a Return and Refund policy. I’m a great place to let your customers know what to do in case they are dissatisfied with their purchase.
                                 Having a straightforward refund or exchange policy is a great way to build trust and reassure your customers that they can buy with confidence.
                             </p>
                         </div>
@@ -116,7 +116,7 @@ function TrackmateXe() {
                         <button className="accordion" onClick={() => handleAccordionClick(2)}>Shipping Info <i class={`bi ${openAccordion === 2 ? 'bi-dash' : 'bi-plus'}`}></i></button>
                         <div className="panel" style={{ display: openAccordion === 2 ? 'block' : 'none' }}>
                             <p>
-                                I'm a shipping policy. I'm a great place to add more information about your shipping methods, packaging and cost. 
+                                I'm a shipping policy. I'm a great place to add more information about your shipping methods, packaging and cost.
                                 Providing straightforward information about your shipping policy is a great way to build trust and reassure your customers that they can buy from you with confidence.
                             </p>
                         </div>
