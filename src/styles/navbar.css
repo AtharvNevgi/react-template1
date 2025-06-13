@@ -64,6 +64,10 @@ i {
     color: white;
 }
 
+.bi-bag-fill:hover {
+    cursor: pointer;
+}
+
 .buyNow {
     width: 130px;
     height: 40px;
@@ -79,4 +83,21 @@ i {
 .buyNow:hover {
     background-color: white;
     color: black;
+}
+
+.sideBar {
+    width: 30%;
+    height: 100vh;
+    background-color: pink;
+    position: fixed;
+    right: -30%;
+    top: 0;
+}
+.sideBar1 {
+    right: 0%;
+}
+.close {
+    background: none;
+    border: none;
+    cursor: pointer;
 }
