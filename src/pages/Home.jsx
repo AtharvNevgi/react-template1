@@ -3,11 +3,12 @@ import "../styles/home.css";
 import watchImg from '../assets/images/watch.png';
 import { NavLink } from "react-router-dom";
 
-function Home() {
+function Home({sideBar}) {
+    console.log(sideBar)
   return (
     <>
       <div className="container">
-        <div className="main">
+        <div className={`main ${sideBar ? '' : 'main-width-change'}`}>
           <div className="main-left">
             <h3 className="headingTop">Own Your Daily Routine</h3>
             <h1 className="heading">0.4 TrackMate XE</h1>

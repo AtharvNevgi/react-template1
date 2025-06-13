@@ -12,7 +12,7 @@ import smallWatchCyan from '../assets/images/smallWatchCyan.png';
 
 import { useState } from 'react';
 
-function TrackmateXe() {
+function TrackmateXe({sideBar}) {
     const smallWatchImg = [smallWatchWhite, smallWatchBlack, smallWatchBlue, smallWatchPurple, smallWatchCyan];
     const watchImg = [watchWhite, watchBlack, watchBlue, watchPurple, watchCyan];
 
@@ -43,7 +43,7 @@ function TrackmateXe() {
         setOpenAccordion(openAccordion === index ? -1 : index);
     };
     return (
-        <div className='container trackMate'>
+        <div className={`container trackMate ${sideBar ? '' : 'trackMate-width-change'}`}>
             <div className="content">
                 <div className="content-left">
                     <div className="left-watchImg">

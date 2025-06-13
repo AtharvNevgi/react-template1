@@ -1,10 +1,9 @@
 import '../styles/navbar.css'
 import logo from '../assets/images/logo.jpg';
 import { NavLink } from 'react-router-dom';
-import { useState } from 'react';
 
-function Navbar() {
-    const [sideBar, setSideBar] = useState(true);
+function Navbar({sideBar, setSideBar}) {
+    // const [sideBar, setSideBar] = useState(true);
 
     const handleSideBar = () => {
         if (sideBar) {
@@ -19,7 +18,7 @@ function Navbar() {
     }
     return (
         <>
-            <div className="navbar">
+            <div className={`navbar ${sideBar ? '' : 'navbar-width-change'}`}>
                 <div className="nav-left">
 
                     <a href='/'><img className='logo' src={logo} alt="" /></a>
@@ -35,7 +34,13 @@ function Navbar() {
                 </div>
             </div>
             <div className={`sideBar ${sideBar ? '' : 'sideBar1'}`}>
-                <button className='close' onClick={closeSideBar}><i class="bi bi-x-lg"></i></button>
+                <div className="sideBarHead">
+                    <div>
+                        <h3>Cart</h3><p>(0 items)</p>
+                    </div>
+                    <button className='close' onClick={closeSideBar}><i class="bi bi-x-lg"></i></button>
+                </div>
+                <p className='emptyMsg'>Your cart is empty.</p>
             </div>
         </>
     );

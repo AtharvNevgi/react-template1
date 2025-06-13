@@ -8,9 +8,9 @@ import brandMasterCard from '../assets/images/brand-mastercard_3x.png';
 import diners from '../assets/images/Diners.png';
 import discover from '../assets/images/Discover.png';
 
-function Footer() {
+function Footer({sideBar}) {
     return (<>
-        <footer>
+        <footer className={`footer ${sideBar ? '' : 'footer-width-change'}`}>
             <div className="box">
                 <div className="top">
                     <div className="top-left">

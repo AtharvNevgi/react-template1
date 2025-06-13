@@ -16,7 +16,9 @@
     align-items: center;
     justify-content: center;
 }
-
+.main-width-change {
+    width: 60%;
+}
 .main-left {
     width: 53%;
     height: 38vh;
