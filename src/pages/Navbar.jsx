@@ -38,7 +38,7 @@ function Navbar({sideBar, setSideBar}) {
                     <div>
                         <h3>Cart</h3><p>(0 items)</p>
                     </div>
-                    <button className='close' onClick={closeSideBar}><i class="bi bi-x-lg"></i></button>
+                    <button className='close' onClick={closeSideBar}><i className="bi bi-x-lg"></i></button>
                 </div>
                 <p className='emptyMsg'>Your cart is empty.</p>
             </div>

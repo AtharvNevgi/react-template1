@@ -53,11 +53,10 @@ function TrackmateXe({sideBar}) {
                         <div className="watchNavInner">
                             {
                                 smallWatchImg.map((item, index) => {
-                                    return (<>
+                                    return (
                                         <div className={`watchInner ${img === index ? "watchBorder" : "watch"}`} key={index}>
                                             <button onClick={() => setImg(index)}><img src={item} alt="" /></button>
                                         </div>
-                                    </>
                                     );
                                 }
                                 )}
@@ -80,24 +79,22 @@ function TrackmateXe({sideBar}) {
                         {
                             color.map((item, index) => {
                                 return (
-                                    <>
                                         <div onClick={() => setColor(index)} className={`palette ${item} ${color1 == index ? 'paletteSelect' : 'paletteSelect1'}`} key={index}></div>
-                                    </>
                                 )
                             })
                         }
                     </div>
                     <p>Quantity *</p>
                     <div className="quantityCounter">
-                        <button onClick={decrement} className='decrement'><i class={`bi bi-dash ${count <= 1 ? 'fade' : 'nofade'}`}></i></button>
+                        <button onClick={decrement} className='decrement'><i className={`bi bi-dash ${count <= 1 ? 'fade' : 'nofade'}`}></i></button>
                         <input type="text" onChange={(e) => setCount(e.target.value)} value={count} />
-                        <button onClick={increment} className='increment'><i class="bi bi-plus"></i></button>
+                        <button onClick={increment} className='increment'><i className="bi bi-plus"></i></button>
                     </div>
                     <br /><br />
                     <button className="addCart">Add to Cart</button>
                     <div className='trackMate-accordion'>
 
-                        <button className="accordion" onClick={() => handleAccordionClick(0)}>Product Info <i class={`bi ${openAccordion === 0 ? 'bi-dash' : 'bi-plus'}`}></i></button>
+                        <button className="accordion" onClick={() => handleAccordionClick(0)}>Product Info <i className={`bi ${openAccordion === 0 ? 'bi-dash' : 'bi-plus'}`}></i></button>
                         <div className="panel" style={{ display: openAccordion === 0 ? 'block' : 'none' }}>
                             <p>
                                 I'm a product detail. I'm a great place to add more information about your product such as sizing, material, care and cleaning instructions.
@@ -105,7 +102,7 @@ function TrackmateXe({sideBar}) {
                             </p>
                         </div>
 
-                        <button className="accordion" onClick={() => handleAccordionClick(1)}>Return & Refund Policy <i class={`bi ${openAccordion === 1 ? 'bi-dash' : 'bi-plus'}`}></i></button>
+                        <button className="accordion" onClick={() => handleAccordionClick(1)}>Return & Refund Policy <i className={`bi ${openAccordion === 1 ? 'bi-dash' : 'bi-plus'}`}></i></button>
                         <div className="panel" style={{ display: openAccordion === 1 ? 'block' : 'none' }}>
                             <p>
                                 I’m a Return and Refund policy. I’m a great place to let your customers know what to do in case they are dissatisfied with their purchase.
@@ -113,7 +110,7 @@ function TrackmateXe({sideBar}) {
                             </p>
                         </div>
 
-                        <button className="accordion" onClick={() => handleAccordionClick(2)}>Shipping Info <i class={`bi ${openAccordion === 2 ? 'bi-dash' : 'bi-plus'}`}></i></button>
+                        <button className="accordion" onClick={() => handleAccordionClick(2)}>Shipping Info <i className={`bi ${openAccordion === 2 ? 'bi-dash' : 'bi-plus'}`}></i></button>
                         <div className="panel" style={{ display: openAccordion === 2 ? 'block' : 'none' }}>
                             <p>
                                 I'm a shipping policy. I'm a great place to add more information about your shipping methods, packaging and cost.
@@ -121,10 +118,10 @@ function TrackmateXe({sideBar}) {
                             </p>
                         </div>
                         <div className="socials">
-                            <i class="bi bi-facebook"></i>
-                            <i class="bi bi-pinterest"></i>
-                            <i class="bi bi-whatsapp"></i>
-                            <i class="bi bi-twitter-x"></i>
+                            <i className="bi bi-facebook"></i>
+                            <i className="bi bi-pinterest"></i>
+                            <i className="bi bi-whatsapp"></i>
+                            <i className="bi bi-twitter-x"></i>
                         </div>
                     </div>
                 </div>
