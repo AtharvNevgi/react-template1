@@ -4,7 +4,6 @@ import watchImg from '../assets/images/watch.png';
 import { NavLink } from "react-router-dom";
 
 function Home({sideBar}) {
-    console.log(sideBar)
   return (
     <>
       <div className="container">

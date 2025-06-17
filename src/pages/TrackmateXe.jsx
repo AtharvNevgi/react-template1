@@ -20,7 +20,7 @@ function TrackmateXe({sideBar}) {
     let currImg = watchImg[img];
 
     const color = ['White', 'Black', 'Blue', 'Purple', 'Torquoise'];
-    const [color1, setColor] = useState(0);
+    const [color1, setColor1] = useState(0);
 
     let watchAmount = 85;
     let selectColor = color[color1];
@@ -79,7 +79,7 @@ function TrackmateXe({sideBar}) {
                         {
                             color.map((item, index) => {
                                 return (
-                                        <div onClick={() => setColor(index)} className={`palette ${item} ${color1 == index ? 'paletteSelect' : 'paletteSelect1'}`} key={index}></div>
+                                        <div onClick={() => setColor1(index)} className={`palette ${item} ${color1 == index ? 'paletteSelect' : 'paletteSelect1'}`} key={index}></div>
                                 )
                             })
                         }
