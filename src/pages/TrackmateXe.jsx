@@ -9,23 +9,27 @@ import smallWatchBlack from '../assets/images/smallWatchBlack.png';
 import smallWatchBlue from '../assets/images/smallWatchBlue.png';
 import smallWatchPurple from '../assets/images/smallWatchPurple.png';
 import smallWatchCyan from '../assets/images/smallWatchCyan.png';
-
+import { cardContext } from '../Store/StoreContext';
+import { useContext } from 'react';
 import { useState } from 'react';
 
-function TrackmateXe({sideBar}) {
+function TrackmateXe() {
+
+    const {sideBar, img, setImg, color1, setColor1, count, setCount} = useContext(cardContext);
+
+    // array for Img small and big 
     const smallWatchImg = [smallWatchWhite, smallWatchBlack, smallWatchBlue, smallWatchPurple, smallWatchCyan];
     const watchImg = [watchWhite, watchBlack, watchBlue, watchPurple, watchCyan];
 
-    const [img, setImg] = useState(0);
     let currImg = watchImg[img];
 
+    // array for color select
     const color = ['White', 'Black', 'Blue', 'Purple', 'Torquoise'];
-    const [color1, setColor1] = useState(0);
-
-    let watchAmount = 85;
     let selectColor = color[color1];
+    
+    // Watch amount
+    let watchAmount = 85;
 
-    const [count, setCount] = useState(1);
     const increment = () => {
         setCount(count + 1);
     }

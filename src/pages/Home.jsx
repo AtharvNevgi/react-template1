@@ -2,8 +2,12 @@ import Navbar from "./Navbar.jsx";
 import "../styles/home.css";
 import watchImg from '../assets/images/watch.png';
 import { NavLink } from "react-router-dom";
+import {cardContext} from '../Store/StoreContext';
+import React, {useContext} from 'react';
 
-function Home({sideBar}) {
+function Home() {
+  const {sideBar} = useContext(cardContext);
+  
   return (
     <>
       <div className="container">

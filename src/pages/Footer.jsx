@@ -7,8 +7,12 @@ import brandJcb from '../assets/images/brand-jcb_3x.png';
 import brandMasterCard from '../assets/images/brand-mastercard_3x.png';
 import diners from '../assets/images/Diners.png';
 import discover from '../assets/images/Discover.png';
+import { useContext } from 'react';
+import { cardContext } from '../Store/StoreContext';
 
-function Footer({sideBar}) {
+function Footer() {
+    const {sideBar} = useContext(cardContext);
+    
     return (<>
         <footer className={`footer ${sideBar ? '' : 'footer-width-change'}`}>
             <div className="box">

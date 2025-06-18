@@ -1,9 +1,11 @@
 import '../styles/navbar.css'
 import logo from '../assets/images/logo.jpg';
 import { NavLink } from 'react-router-dom';
+import {cardContext} from '../Store/StoreContext';
+import React, {useContext} from 'react';
 
-function Navbar({sideBar, setSideBar}) {
-    // const [sideBar, setSideBar] = useState(true);
+function Navbar(/*{sideBar, setSideBar}*/) {
+    const {sideBar, setSideBar} = useContext(cardContext);
 
     const handleSideBar = () => {
         if (sideBar) {
