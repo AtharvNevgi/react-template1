@@ -83,7 +83,7 @@ function TrackmateXe() {
                         {
                             color.map((item, index) => {
                                 return (
-                                        <div onClick={() => setColor1(index)} className={`palette ${item} ${color1 == index ? 'paletteSelect' : 'paletteSelect1'}`} key={index}></div>
+                                        <div title={item} onClick={() => setColor1(index)} className={`palette ${item} ${color1 == index ? 'paletteSelect' : 'paletteSelect1'}`} key={index}></div>
                                 )
                             })
                         }

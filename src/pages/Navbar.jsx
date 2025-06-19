@@ -3,8 +3,9 @@ import logo from '../assets/images/logo.jpg';
 import { NavLink } from 'react-router-dom';
 import {cardContext} from '../Store/StoreContext';
 import React, {useContext} from 'react';
+import cartImg from '../assets/images/cartImg.png';
 
-function Navbar(/*{sideBar, setSideBar}*/) {
+function Navbar() {
     const {sideBar, setSideBar} = useContext(cardContext);
 
     const handleSideBar = () => {
@@ -42,7 +43,22 @@ function Navbar(/*{sideBar, setSideBar}*/) {
                     </div>
                     <button className='close' onClick={closeSideBar}><i className="bi bi-x-lg"></i></button>
                 </div>
-                <p className='emptyMsg'>Your cart is empty.</p>
+                <div className="cartItems">
+                    <div className="product-details">
+                        <div className="productLeft">
+                            <img src={cartImg} alt="" />
+                        </div>
+                        <div className="productRight">
+                            <p>0.4 TrackMate XE</p>
+                            <p>$85.00</p>
+                            <p>Color: Black</p>
+                        </div>
+                    </div> 
+                </div>
+                <div className="checkOut">
+
+                </div>
+                {/* <p className='emptyMsg'>Your cart is empty.</p> */}
             </div>
         </>
     );
