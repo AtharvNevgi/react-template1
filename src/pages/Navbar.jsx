@@ -50,7 +50,7 @@ function Navbar() {
             </div>
             <div className={`sideBar ${sideBar ? '' : 'sideBar1'}`}>
                 <div className="sideBarHead">
-                    <div>
+                    <div className='cartHead'>
                         <h3>Cart</h3><p>(0 items)</p>
                     </div>
                     <button className='close' onClick={closeSideBar}><i className="bi bi-x-lg"></i></button>
@@ -61,13 +61,19 @@ function Navbar() {
                             <img src={cartImg} alt="" />
                         </div>
                         <div className="productRight">
-                            <p>0.4 TrackMate XE</p>
-                            <p>$85.00</p>
-                            <p>Color: Black</p>
-                            <div className="quantityCounter" style={{border:'1px solid white', width:'80px', height:'30px'}}>
-                                <button style={{background:'none'}} onClick={decrement}  className='decrement cart-dec-button'><i style={{color:'rgb(204, 185, 185)',fontSize:'20px'}} className={`bi bi-dash ${count <= 1 ? 'fade' : 'nofade'}`}></i></button>
-                                <input style={{background:'none', color:'white'}} type="text"  value={count} />
-                                <button style={{background:'none'}} onClick={increment} className='increment'><i style={{fontSize:'20px',color:'rgb(204, 185, 185)'}} className="bi bi-plus"></i></button>
+                            <div className="innerRight">
+                                <p>0.4 TrackMate XE</p>
+                                <p>$85.00</p>
+                                <p>Color: Black</p>
+                                <div className="quantityCounter" style={{border:'1px solid white', width:'80px', height:'30px'}}>
+                                    <button style={{background:'none'}} onClick={decrement}  className='decrement cart-dec-button'><i style={{color:'rgb(204, 185, 185)',fontSize:'20px'}} className={`bi bi-dash ${count <= 1 ? 'fade' : 'nofade'}`}></i></button>
+                                    <input style={{background:'none', color:'white'}} type="text"  value={count} />
+                                    <button style={{background:'none'}} onClick={increment} className='increment'><i style={{fontSize:'20px',color:'rgb(204, 185, 185)'}} className="bi bi-plus"></i></button>
+                                </div>
+                            </div>
+                            <div className="innerLeft">
+                                <button><i class="bi bi-trash3"></i></button>
+                                <p>$85.00</p>
                             </div>
                         </div>
                     </div> 
