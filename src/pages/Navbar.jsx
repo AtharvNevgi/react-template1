@@ -6,7 +6,7 @@ import React, {useContext} from 'react';
 import cartImg from '../assets/images/cartImg.png';
 
 function Navbar() {
-    const {sideBar, setSideBar} = useContext(cardContext);
+    const {sideBar, setSideBar, count, setCount} = useContext(cardContext);
 
     const handleSideBar = () => {
         if (sideBar) {
@@ -18,6 +18,18 @@ function Navbar() {
     }
     const closeSideBar = () => {
         setSideBar(true)
+    }
+
+    const increment = () => {
+        setCount(count + 1);
+    }
+    const decrement = () => {
+        if (count <= 1) {
+            setCount(count);
+        }
+        else {
+            setCount(count - 1);
+        }
     }
     return (
         <>
@@ -52,6 +64,11 @@ function Navbar() {
                             <p>0.4 TrackMate XE</p>
                             <p>$85.00</p>
                             <p>Color: Black</p>
+                            <div className="quantityCounter" style={{border:'1px solid white', width:'80px', height:'30px'}}>
+                                <button style={{background:'none'}} onClick={decrement}  className='decrement cart-dec-button'><i style={{color:'rgb(204, 185, 185)',fontSize:'20px'}} className={`bi bi-dash ${count <= 1 ? 'fade' : 'nofade'}`}></i></button>
+                                <input style={{background:'none', color:'white'}} type="text"  value={count} />
+                                <button style={{background:'none'}} onClick={increment} className='increment'><i style={{fontSize:'20px',color:'rgb(204, 185, 185)'}} className="bi bi-plus"></i></button>
+                            </div>
                         </div>
                     </div> 
                 </div>

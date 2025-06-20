@@ -102,7 +102,7 @@ i {
     border: none;
     cursor: pointer;
 }
-.sideBar div {
+.sideBar .sideBarHead {
     display: flex;
     align-items:center;
     gap: 5px;
@@ -139,9 +139,9 @@ i {
     width: 100%;
     height: 100px;
     /* background-color: red; */
-    position: absolute;
     padding: 20px;
-    top: 70px;
+    display: flex;
+    align-items: center;
 }
 .productLeft {
     width: 21%;
@@ -151,8 +151,21 @@ i {
 }
 .productRight {
     width: 75%;
-    height: 130px;
-    background-color: yellow;
+    height: 100px;
+    /* background-color: yellow; */
+    /* display: flex; */
+    flex-direction: column;
+    padding: 20px;
+    align-items: start;
+}
+.productRight p{
+    margin-bottom: 5px;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+}
+.quantityCounter button {
+    background: none;
 }
 .checkOut {
     width: 100%;
