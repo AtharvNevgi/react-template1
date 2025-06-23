@@ -6,7 +6,7 @@ import React, {useContext} from 'react';
 import cartImg from '../assets/images/cartImg.png';
 
 function Navbar() {
-    const {sideBar, setSideBar, count, setCount, /*trackMateXeAmount,*/ cart} = useContext(cardContext);
+    const {sideBar, setSideBar, cartCount, setCartCount, /*trackMateXeAmount,*/ cart} = useContext(cardContext);
 
     const handleSideBar = () => {
         if (sideBar) {
@@ -21,14 +21,14 @@ function Navbar() {
     }
 
     const increment = () => {
-        setCount(count + 1);
+        setCartCount(cartCount + 1);
     }
     const decrement = () => {
-        if (count <= 1) {
-            setCount(count);
+        if (cartCount <= 1) {
+            setCartCount(cartCount);
         }
         else {
-            setCount(count - 1);
+            setCartCount(cartCount - 1);
         }
     }
     return (
@@ -70,8 +70,8 @@ function Navbar() {
                                         <p>{`₹${item.price}.00`}</p>
                                         <p>Color: {item.color}</p>
                                         <div className="quantityCounter" style={{border:'1px solid white', width:'80px', height:'30px'}}>
-                                            <button style={{background:'none'}} onClick={decrement}  className='decrement cart-dec-button'><i style={{color:'rgb(204, 185, 185)',fontSize:'20px'}} className={`bi bi-dash ${count <= 1 ? 'fade' : 'nofade'}`}></i></button>
-                                            <input style={{background:'none', color:'white'}} type="text"  value={count} />
+                                            <button style={{background:'none'}} onClick={decrement}  className='decrement cart-dec-button'><i style={{color:'rgb(204, 185, 185)',fontSize:'20px'}} className={`bi bi-dash ${cartCount <= 1 ? 'fade' : 'nofade'}`}></i></button>
+                                            <input style={{background:'none', color:'white'}} type="text"  value={cartCount} />
                                             <button style={{background:'none'}} onClick={increment} className='increment'><i style={{fontSize:'20px',color:'rgb(204, 185, 185)'}} className="bi bi-plus"></i></button>
                                         </div>
                                     </div>

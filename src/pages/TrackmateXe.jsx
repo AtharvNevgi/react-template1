@@ -15,7 +15,7 @@ import { useState } from 'react';
 
 function TrackmateXe() {
 
-    const {sideBar, img, setImg, color1, setColor1, count, setCount, addToCart} = useContext(cardContext);
+    const {sideBar, img, setImg, color1, setColor1, trackMateXeCount, setTrackMateXeCount, addToCart} = useContext(cardContext);
 
     // array for Img small and big 
     const smallWatchImg = [smallWatchWhite, smallWatchBlack, smallWatchBlue, smallWatchPurple, smallWatchCyan];
@@ -35,20 +35,20 @@ function TrackmateXe() {
             name: "0.4 TrackMate XE",
             price: watchAmount,
             color: selectColor,
-            quantity: count,
+            quantity: trackMateXeCount,
             img: img
         })
     }
 
     const increment = () => {
-        setCount(count + 1);
+        setTrackMateXeCount(trackMateXeCount + 1);
     }
     const decrement = () => {
-        if (count <= 1) {
-            setCount(count);
+        if (trackMateXeCount <= 1) {
+            setTrackMateXeCount(trackMateXeCount);
         }
         else {
-            setCount(count - 1);
+            setTrackMateXeCount(trackMateXeCount - 1);
         }
     }
     const [openAccordion, setOpenAccordion] = useState(-1);
@@ -100,8 +100,8 @@ function TrackmateXe() {
                     </div>
                     <p>Quantity *</p>
                     <div className="quantityCounter">
-                        <button onClick={decrement} className='decrement'><i className={`bi bi-dash ${count <= 1 ? 'fade' : 'nofade'}`}></i></button>
-                        <input type="text" onChange={(e) => setCount(e.target.value)} value={count} />
+                        <button onClick={decrement} className='decrement'><i className={`bi bi-dash ${trackMateXeCount <= 1 ? 'fade' : 'nofade'}`}></i></button>
+                        <input type="text" onChange={(e) => setCount(e.target.value)} value={trackMateXeCount} />
                         <button onClick={increment} className='increment'><i className="bi bi-plus"></i></button>
                     </div>
                     <br /><br />
