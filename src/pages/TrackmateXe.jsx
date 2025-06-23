@@ -15,7 +15,7 @@ import { useState } from 'react';
 
 function TrackmateXe() {
 
-    const {sideBar, img, setImg, color1, setColor1, count, setCount} = useContext(cardContext);
+    const {sideBar, img, setImg, color1, setColor1, count, setCount, addToCart} = useContext(cardContext);
 
     // array for Img small and big 
     const smallWatchImg = [smallWatchWhite, smallWatchBlack, smallWatchBlue, smallWatchPurple, smallWatchCyan];
@@ -29,6 +29,16 @@ function TrackmateXe() {
     
     // Watch amount
     let watchAmount = 85;
+
+    const handleAddToCart = () => {
+        addToCart({
+            name: "0.4 TrackMate XE",
+            price: watchAmount,
+            color: selectColor,
+            quantity: count,
+            img: img
+        })
+    }
 
     const increment = () => {
         setCount(count + 1);
@@ -77,7 +87,7 @@ function TrackmateXe() {
                 <div className="content-right">
                     <h4>0.4 TrackMate XE</h4>
                     <p>SKU: 0001</p><br />
-                    <p><b>${watchAmount}.00</b></p><br />
+                    <p><b>₹{watchAmount}.00</b></p><br />
                     <p>Color: {selectColor} *</p>
                     <div className="colorPalette">
                         {
@@ -95,7 +105,7 @@ function TrackmateXe() {
                         <button onClick={increment} className='increment'><i className="bi bi-plus"></i></button>
                     </div>
                     <br /><br />
-                    <button className="addCart">Add to Cart</button>
+                    <button onClick={handleAddToCart} className="addCart">Add to Cart</button>
                     <div className='trackMate-accordion'>
 
                         <button className="accordion" onClick={() => handleAccordionClick(0)}>Product Info <i className={`bi ${openAccordion === 0 ? 'bi-dash' : 'bi-plus'}`}></i></button>

@@ -8,7 +8,17 @@ const StoreContext = ({children}) => {
     const [color1, setColor1] = useState(0);
     const [count, setCount] = useState(1);
 
-    return( <cardContext.Provider value={{sideBar, setSideBar, img, setImg, color1, setColor1, count, setCount}}>  
+    // Cart State
+    const [cart, setCart] = useState([]);
+
+    let amount = 85;
+    let trackMateXeAmount = amount * count;
+
+    const addToCart = (item) => {
+        setCart(prevCart => [...prevCart, item]);
+    }
+
+    return( <cardContext.Provider value={{sideBar, setSideBar, img, setImg, color1, setColor1, count, setCount, trackMateXeAmount, cart, setCart, addToCart}}>  
                 {children}
             </cardContext.Provider>
     );

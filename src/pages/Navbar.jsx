@@ -6,7 +6,7 @@ import React, {useContext} from 'react';
 import cartImg from '../assets/images/cartImg.png';
 
 function Navbar() {
-    const {sideBar, setSideBar, count, setCount} = useContext(cardContext);
+    const {sideBar, setSideBar, count, setCount, /*trackMateXeAmount,*/ cart} = useContext(cardContext);
 
     const handleSideBar = () => {
         if (sideBar) {
@@ -56,27 +56,33 @@ function Navbar() {
                     <button className='close' onClick={closeSideBar}><i className="bi bi-x-lg"></i></button>
                 </div>
                 <div className="cartItems">
-                    <div className="product-details">
-                        <div className="productLeft">
-                            <img src={cartImg} alt="" />
-                        </div>
-                        <div className="productRight">
-                            <div className="innerRight">
-                                <p>0.4 TrackMate XE</p>
-                                <p>$85.00</p>
-                                <p>Color: Black</p>
-                                <div className="quantityCounter" style={{border:'1px solid white', width:'80px', height:'30px'}}>
-                                    <button style={{background:'none'}} onClick={decrement}  className='decrement cart-dec-button'><i style={{color:'rgb(204, 185, 185)',fontSize:'20px'}} className={`bi bi-dash ${count <= 1 ? 'fade' : 'nofade'}`}></i></button>
-                                    <input style={{background:'none', color:'white'}} type="text"  value={count} />
-                                    <button style={{background:'none'}} onClick={increment} className='increment'><i style={{fontSize:'20px',color:'rgb(204, 185, 185)'}} className="bi bi-plus"></i></button>
+                    {cart.length === 0 ? (
+                        <p className='emptyMsg'>Your cart is empty.</p>
+                    ) : (
+                        cart.map((item, index) => (
+                            <div className="product-details" key={index}>
+                                <div className="productLeft">
+                                    <img src={cartImg} alt="" />
                                 </div>
-                            </div>
-                            <div className="innerLeft">
-                                <button><i class="bi bi-trash3"></i></button>
-                                <p>$85.00</p>
-                            </div>
-                        </div>
-                    </div> 
+                                <div className="productRight">
+                                    <div className="innerRight">
+                                        <p>{item.name}</p>
+                                        <p>{`₹${item.price}.00`}</p>
+                                        <p>Color: {item.color}</p>
+                                        <div className="quantityCounter" style={{border:'1px solid white', width:'80px', height:'30px'}}>
+                                            <button style={{background:'none'}} onClick={decrement}  className='decrement cart-dec-button'><i style={{color:'rgb(204, 185, 185)',fontSize:'20px'}} className={`bi bi-dash ${count <= 1 ? 'fade' : 'nofade'}`}></i></button>
+                                            <input style={{background:'none', color:'white'}} type="text"  value={count} />
+                                            <button style={{background:'none'}} onClick={increment} className='increment'><i style={{fontSize:'20px',color:'rgb(204, 185, 185)'}} className="bi bi-plus"></i></button>
+                                        </div>
+                                    </div>
+                                    <div className="innerLeft">
+                                        <button><i class="bi bi-trash3"></i></button>
+                                        <p>{`₹${item.price * item.quantity}.00`}</p>
+                                    </div>
+                                </div>
+                            </div> 
+                        ))
+                    )}
                 </div>
                 <div className="checkOut">
 
