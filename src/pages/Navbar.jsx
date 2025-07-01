@@ -6,7 +6,7 @@ import React, {useContext} from 'react';
 import cartImg from '../assets/images/cartImg.png';
 
 function Navbar() {
-    const {sideBar, setSideBar, cartCount, setCartCount, /*trackMateXeAmount,*/ cart} = useContext(cardContext);
+    const {sideBar, setSideBar, cartCount, setCartCount, trackMateXeAmount, cart} = useContext(cardContext);
 
     const handleSideBar = () => {
         if (sideBar) {
@@ -77,7 +77,7 @@ function Navbar() {
                                     </div>
                                     <div className="innerLeft">
                                         <button><i class="bi bi-trash3"></i></button>
-                                        <p>{`₹${item.price * item.quantity}.00`}</p>
+                                        <p>{`₹${trackMateXeAmount/*item.price * item.quantity*/}.00`}</p>
                                     </div>
                                 </div>
                             </div> 
