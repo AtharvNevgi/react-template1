@@ -8,7 +8,8 @@
     /* position: fixed; */
 }
 .navbar-width-change {
-    width: 70%;
+    /* width: 70%; */
+    width: 100%;
 }
 .nav-left {
     width: 25%;
@@ -85,6 +86,16 @@ i {
 .buyNow:hover {
     background-color: white;
     color: black;
+}
+.sideBarLeft{
+    width: 70%;
+    height: 100vh;
+    background-color: hsla(0, 19%, 85%, 0.288);
+    position: fixed;
+    top: 0;
+}
+.sideBarLeft1{
+    left: 100%;
 }
 .sideBar {
     width: 30%;

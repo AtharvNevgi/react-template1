@@ -17,7 +17,8 @@
     justify-content: center;
 }
 .main-width-change {
-    width: 60%;
+    /* width: 60%; */
+    width: 100%;
 }
 .main-left {
     width: 53%;

@@ -48,6 +48,7 @@ function Navbar() {
                     <NavLink to="/tracmateShop"><button className='buyNow'>Buy Now</button></NavLink>
                 </div>
             </div>
+            <div className={`sideBarLeft ${sideBar ? 'sideBarLeft1' : ''}`} onClick={closeSideBar}></div>
             <div className={`sideBar ${sideBar ? '' : 'sideBar1'}`}>
                 <div className="sideBarHead">
                     <div className='cartHead'>
