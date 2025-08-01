@@ -49,8 +49,12 @@ const StoreContext = ({ children }) => {
             }
         });
     }
+    
+    const removeFromCart = (indexToRemove) => {
+        setCart(prevCart => prevCart.filter((_, idx) => idx !== indexToRemove));
+    };
 
-    return (<CardContext.Provider value={{ sideBar, setSideBar, img, setImg, color1, setColor1, cartCount, setCartCount, trackMateXeCount, setTrackMateXeCount, trackMateXeAmount, cart, setCart, addToCart }}>
+    return (<CardContext.Provider value={{ sideBar, setSideBar, img, setImg, color1, setColor1, cartCount, setCartCount, trackMateXeCount, setTrackMateXeCount, trackMateXeAmount, cart, setCart, addToCart, removeFromCart }}>
         {children}
     </CardContext.Provider>
     );

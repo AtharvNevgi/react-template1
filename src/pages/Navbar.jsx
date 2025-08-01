@@ -6,7 +6,7 @@ import React, {useContext} from 'react';
 import cartImg from '../assets/images/cartImg.png';
 
 function Navbar() {
-    const {sideBar, setSideBar, cartCount, setCartCount, trackMateXeAmount, cart} = useContext(CardContext);
+    const {sideBar, setSideBar, cartCount, setCartCount, trackMateXeAmount, cart, removeFromCart} = useContext(CardContext);
 
     const handleSideBar = () => {
         if (sideBar) {
@@ -20,6 +20,7 @@ function Navbar() {
         setSideBar(true)
     }
 
+/*   
     const increment = () => {
         setCartCount(cartCount + 1);
     }
@@ -31,6 +32,7 @@ function Navbar() {
             setCartCount(cartCount - 1);
         }
     }
+*/    
     return (
         <>
             <div className={`navbar ${sideBar ? '' : 'navbar-width-change'}`}>
@@ -52,7 +54,7 @@ function Navbar() {
             <div className={`sideBar ${sideBar ? '' : 'sideBar1'}`}>
                 <div className="sideBarHead">
                     <div className='cartHead'>
-                        <h3>Cart</h3><p>(0 items)</p>
+                        <h3>Cart</h3><p>({cartCount} items)</p>
                     </div>
                     <button className='close' onClick={closeSideBar}><i className="bi bi-x-lg"></i></button>
                 </div>
@@ -70,15 +72,18 @@ function Navbar() {
                                         <p>{item.name}</p>
                                         <p>{`₹${item.price}.00`}</p>
                                         <p>Color: {item.color}</p>
-                                        <div className="quantityCounter" style={{border:'1px solid white', width:'80px', height:'30px'}}>
-                                            <button style={{background:'none'}} onClick={decrement}  className='decrement cart-dec-button'><i style={{color:'rgb(204, 185, 185)',fontSize:'20px'}} className={`bi bi-dash ${cartCount <= 1 ? 'fade' : 'nofade'}`}></i></button>
-                                            <input style={{background:'none', color:'white'}} type="text"  value={cartCount} />
-                                            <button style={{background:'none'}} onClick={increment} className='increment'><i style={{fontSize:'20px',color:'rgb(204, 185, 185)'}} className="bi bi-plus"></i></button>
+                                        <div className="quantityCounter quantityCounterNav" style={{border:'1px solid white', width:'80px', height:'30px'}}>
+                                            {/* <button style={{background:'none'}} onClick={decrement}  className='decrement cart-dec-button'><i style={{color:'rgb(204, 185, 185)',fontSize:'20px'}} className={`bi bi-dash ${cartCount <= 1 ? 'fade' : 'nofade'}`}></i></button> */}
+                                            <span style={{color:'white', fontSize:'14px', marginLeft:'5px'}}>Quantity</span>
+                                            <input style={{background:'none', color:'white'}} type="text"  value={item.quantity} />
+                                            {/* <button style={{background:'none'}} onClick={increment} className='increment'><i style={{fontSize:'20px',color:'rgb(204, 185, 185)'}} className="bi bi-plus"></i></button> */}
                                         </div>
                                     </div>
                                     <div className="innerLeft">
-                                        <button><i class="bi bi-trash3"></i></button>
-                                        <p>{`₹${trackMateXeAmount/*item.price * item.quantity*/}.00`}</p>
+                                        <button onClick={() => removeFromCart(index)}>
+                                            <i class="bi bi-trash3"></i>
+                                        </button>
+                                        <p>{`₹${/*trackMateXeAmount*/item.price * item.quantity}.00`}</p>
                                     </div>
                                 </div>
                             </div> 

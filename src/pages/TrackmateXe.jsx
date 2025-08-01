@@ -37,7 +37,8 @@ function TrackmateXe() {
             color: selectColor,
             quantity: trackMateXeCount,
             img: img
-        })
+        });
+        setTrackMateXeCount(1);
     }
 
     const increment = () => {
