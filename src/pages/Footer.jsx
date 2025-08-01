@@ -8,10 +8,10 @@ import brandMasterCard from '../assets/images/brand-mastercard_3x.png';
 import diners from '../assets/images/Diners.png';
 import discover from '../assets/images/Discover.png';
 import { useContext } from 'react';
-import { cardContext } from '../Store/StoreContext';
+import { CardContext } from '../Store/StoreContext';
 
 function Footer() {
-    const {sideBar} = useContext(cardContext);
+    const {sideBar} = useContext(CardContext);
     
     return (<>
         <footer className={`footer ${sideBar ? '' : 'footer-width-change'}`}>

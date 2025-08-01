@@ -9,13 +9,13 @@ import smallWatchBlack from '../assets/images/smallWatchBlack.png';
 import smallWatchBlue from '../assets/images/smallWatchBlue.png';
 import smallWatchPurple from '../assets/images/smallWatchPurple.png';
 import smallWatchCyan from '../assets/images/smallWatchCyan.png';
-import { cardContext } from '../Store/StoreContext';
+import { CardContext } from '../Store/StoreContext';
 import { useContext } from 'react';
 import { useState } from 'react';
 
 function TrackmateXe() {
 
-    const {sideBar, img, setImg, color1, setColor1, trackMateXeCount, setTrackMateXeCount, addToCart} = useContext(cardContext);
+    const {sideBar, img, setImg, color1, setColor1, trackMateXeCount, setTrackMateXeCount, addToCart} = useContext(CardContext);
 
     // array for Img small and big 
     const smallWatchImg = [smallWatchWhite, smallWatchBlack, smallWatchBlue, smallWatchPurple, smallWatchCyan];

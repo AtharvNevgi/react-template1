@@ -1,12 +1,12 @@
 import '../styles/navbar.css'
 import logo from '../assets/images/logo.jpg';
 import { NavLink } from 'react-router-dom';
-import {cardContext} from '../Store/StoreContext';
+import {CardContext} from '../Store/StoreContext';
 import React, {useContext} from 'react';
 import cartImg from '../assets/images/cartImg.png';
 
 function Navbar() {
-    const {sideBar, setSideBar, cartCount, setCartCount, trackMateXeAmount, cart} = useContext(cardContext);
+    const {sideBar, setSideBar, cartCount, setCartCount, trackMateXeAmount, cart} = useContext(CardContext);
 
     const handleSideBar = () => {
         if (sideBar) {
