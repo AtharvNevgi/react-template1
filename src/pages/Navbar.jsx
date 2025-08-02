@@ -90,10 +90,26 @@ function Navbar() {
                         ))
                     )}
                 </div>
-                <div className="checkOut">
-
-                </div>
-                {/* <p className='emptyMsg'>Your cart is empty.</p> */}
+                {
+                    cart.length === 0 
+                    ? (
+                        <div className="checkOut1"></div>
+                    ) 
+                    : (
+                        <div className="checkOut">
+                            <div className="innerCheckOut">
+                                <div className="total">
+                                    <span>Estimated total</span>
+                                    <span>₹{`${cartCount * 85}.00`}</span>
+                                </div>
+                                <div className="checkOutButtons">
+                                    <button>Checkout</button>
+                                    <button>View Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    )
+                }
             </div>
         </>
     );

@@ -17,14 +17,7 @@ const StoreContext = ({ children }) => {
 
     useEffect(() => {
         const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
-        // console.log(cart[cart.length - 1].color)
-        console.log(cart)
-        // console.log(cart[0].color)
-        if (cart.length > 0) {
-            // if (cart[cart.length - 1].color === "White") {
-            //     console.log("white working")
-            // }
-        }
+        // console.log(cart);
         setCartCount(totalCount);
     }, [cart]);
 

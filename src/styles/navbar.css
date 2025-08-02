@@ -90,7 +90,7 @@ i {
 .sideBarLeft{
     width: 70%;
     height: 100vh;
-    background-color: hsla(0, 19%, 85%, 0.288);
+    background-color: hsla(0, 19%, 85%, 0.363);
     position: fixed;
     top: 0;
 }
@@ -140,8 +140,11 @@ i {
 }
 .emptyMsg {
     color: white;
-    font-size: 18px;
+    font-size: 20px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: absolute;
+    left: 110px;
+    top: 200px;
 }
 /* .cartItems {
     width: 100%;
@@ -224,6 +227,45 @@ i {
 }
 .checkOut {
     width: 100%;
-    height: 20%;
-    background-color: aqua;
+    min-height: 28%;
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.innerCheckOut{
+    width: 90%;
+    height: 90%;
+    background-color: black;
+}
+.total {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.total span{
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 23px;
+}
+.checkOutButtons{
+    width: 100%;
+    height: 106px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* gap: 10px; */
+}
+.checkOutButtons button{
+    padding: 14px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: blueviolet;
+    border: none;
+    transition: 0.5s;
+}
+.checkOutButtons button:hover{
+    background-color: black;
+    color: blueviolet;
+    border: 1px solid white;
 }

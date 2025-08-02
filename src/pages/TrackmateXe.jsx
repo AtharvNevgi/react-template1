@@ -31,14 +31,16 @@ function TrackmateXe() {
     let watchAmount = 85;
 
     const handleAddToCart = () => {
+        const itemName = "0.4 TrackMate XE";
         addToCart({
-            name: "0.4 TrackMate XE",
+            name: itemName,
             price: watchAmount,
             color: selectColor,
             quantity: trackMateXeCount,
             img: img
         });
         setTrackMateXeCount(1);
+        alert(`${itemName} (${selectColor}) Added to cart`);
     }
 
     const increment = () => {
