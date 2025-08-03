@@ -6,7 +6,7 @@ import React, {useContext} from 'react';
 import cartImg from '../assets/images/cartImg.png';
 
 function Navbar() {
-    const {sideBar, setSideBar, cartCount, setCartCount, trackMateXeAmount, cart, removeFromCart} = useContext(CardContext);
+    const {sideBar, setSideBar, cartCount, /*setCartCount, trackMateXeAmount,*/ cart, removeFromCart} = useContext(CardContext);
 
     const handleSideBar = () => {
         if (sideBar) {
@@ -104,7 +104,11 @@ function Navbar() {
                                 </div>
                                 <div className="checkOutButtons">
                                     <button>Checkout</button>
-                                    <button>View Cart</button>
+                                    <NavLink to='/tracmateShop/cart-page'>
+                                        <button className='viewCartButton' onClick={() => setSideBar(true)}>
+                                            View Cart
+                                        </button>
+                                    </NavLink>
                                 </div>
                             </div>
                         </div>
